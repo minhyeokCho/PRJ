@@ -1,0 +1,666 @@
+@charset "utf-8";
+
+@import url("popup.css"); /* 팝업 공통스타일 */
+
+/* ************************************************************************************************************************************************************
+						《 이디야멤버스 공통 레이아웃 스타일 》
+************************************************************************************************************************************************************ */
+
+/*
+	[z-index 위계]
+	#알럿딤드:class="dim"				 9990
+	#알럿								9999
+	#PC헤더								999
+	#GNB딤드:#header.on					998
+	#MO헤더								998
+	#app다운로드/탑버튼						10
+*/
+
+/* ============================== [ 레이아웃 리셋 Layout Reset ] ========================================================================================== */
+/* Reset */
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+abbr,address,big,cite,code,del,dfn,font,figure,figcaption,img,ins,q,s,samp,small,strike,sub,sup,tt,var,
+b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {font:16px/1em 'Pretendard',sans-serif; letter-spacing:-0.06px; word-break:keep-all;}
+button,input,textarea {font:16px/1em 'Pretendard',sans-serif; letter-spacing:-0.06px;}
+select {font:16px/1em 'Pretendard',sans-serif; letter-spacing:-0.06px;}
+::selection {color:#fff; background-color:#2a47bf;}
+
+/* ============================== [ 공통레이아웃 ] ========================================================================================== */
+#header {width:100%; position:sticky; left:0; top:-48px; z-index:999;}
+
+/* GNB_dim */
+#header:before {background-color:rgba(0, 0, 0, 0.7); content:''; position:fixed; left:0; top:0; height:100vh; width:100%; z-index:998; opacity:0; visibility:hidden;}
+#header:before {transition:opacity .2s , visibility .2s;}
+#header.on:before {opacity:1; visibility:visible;}
+
+/* -------------------- 서브페이지 타이틀영역 ---------------------------------------- */
+.sub {padding-bottom:120px;}
+.wd_auto {margin:0 auto; width:1192px;}
+.sub_tit_area {padding:76px 0 80px; box-sizing:border-box;}
+.sub_tit_area .title {text-align:center; font-size:38px; font-weight:700; line-height:1.211em;}
+.sub_tit_area .sub_txt {font-size:20px; line-height:1.150em; margin-top:20px; text-align:center; word-break:keep-all;}
+
+/* ============================== [ 공통스타일 ] ========================================================================================== */
+.div_gap {background-color:#F8F8F8; display:block; border:none; position:relative; height:8px; margin:0; width:100%;}
+.go_view {/* background-color:rgba(0,0,0,0.3); */ position:absolute; left:0; top:0; height:100%; width:100%;}
+
+/* ============================== [ APP 다운로드 ] ========================================================================================== */
+.app_down {position:fixed; right:0; top:50%; transform:translateY(-50%); z-index:10;}
+.app_down .btn_down {display:block; background-color:#fff; box-shadow:0px 4px 8px -3px rgba(0, 0, 0, 0.15); border-radius:8px 0 0 8px; box-sizing:border-box; padding:12px 4px; width:52px; border:1px solid #eee; border-right:none;}
+.app_down .btn_down .icon_down {display:block; height:28px; width:28px; background:url(../images/common/icon_down_bk.svg) no-repeat 0 0; background-size:100%; margin:0 auto;}
+.app_down .btn_down span {display:block; font-weight:500; font-size:10px; line-height:1.200em; text-align:center; margin-top:10px;}
+
+/* ============================== [ 탑버튼 ] ========================================================================================== */
+.go_top {position:fixed; right:40px; bottom:40px; opacity:0; visibility:hidden; z-index:10;}
+.go_top {transition:opacity .2s, visibility .2s;}
+.go_top.active {opacity:1; visibility:visible;}
+.go_top a {display:block; height:52px; width:52px; background:#111 url(../images/common/icon_top.svg) no-repeat center; background-size:24px; border-radius:50%;}
+
+
+/* ************************************************************************************************************************************************************
+						《 PC헤더 》
+************************************************************************************************************************************************************ */
+.header {width:100%; position:relative; z-index:999;}
+
+/* 헤더고정 BG */
+#header.on .header .gnb_area,
+.header.active .gnb_area {background-color:#fff;}
+#header.on .header .head_top,
+.header.active .head_top {background-color:#f8f8f8;}
+
+/* ============================== [ 헤더상단영역 ] ========================================================================================== */
+.header .head_top {transition:background .3s; opacity:0.9999;}
+.header .head_top .top_inner {display:flex; align-items:center; justify-content:flex-end; width:1192px; margin:0 auto; padding:12px 0;}
+
+/* 멤버십정보 */
+.header .user_info {padding-right:33px; position:relative;}
+.header .user_info::before {display:block; content:''; height:8px; width:1px; position:absolute; right:16px; top:7px; background-color:#ccc;}
+.mem_info_wrap {display:inline-block; position:relative;}
+.mem_info_wrap .name {display:block; font-size:14px; font-weight:500; line-height:1.214em;}
+.mem_info_wrap .name a {text-decoration:underline;}
+.mem_info_wrap .tooltip {background-color:#111; box-sizing:border-box; border-radius:4px; padding:8px 12px; position:absolute; top:22px; left:50%; transform:translateX(-50%); white-space:nowrap; opacity:0; visibility:hidden;}
+.mem_info_wrap .tooltip {transition:opacity .2s;}
+.mem_info_wrap .name:hover ~ .tooltip {opacity:1; visibility:visible;}
+.mem_info_wrap .tooltip::before {display:block; content:''; height:5px; width:10px; background:url(../images/common/icon_tool.svg) no-repeat 0 0; background-size:10px 5px; position:absolute; top:-4px; left:50%; transform:translateX(-50%);}
+.mem_info_wrap .tooltip .state {display:inline-block;}
+.mem_info_wrap .tooltip .state ~ .state {margin-left:9px;}
+.mem_info_wrap .tooltip .state .txt {color:#fff; font-size:12px; font-weight:500; line-height:1.667em;}
+.mem_info_wrap .tooltip .state .txt em {display:inline-block; vertical-align:middle; margin-left:2px; color:#15abff; font-size:14px; font-weight:700; line-height:1.571em;}
+.mem_info_wrap .tooltip .state.more .txt em {padding-right:12px; background:url(../images/common/icon_plus_skyblue.svg) no-repeat right center; background-size:12px;}
+.header .user_info .level {display:inline-block; vertical-align:middle; margin-left:12px; color:#666; font-size:12px; font-weight:500; line-height:1.833em;}
+.header .user_info .level span {margin-right:4px; display:inline-block; vertical-align:middle; font-size:14px; color:#2A47BF;}
+
+
+/* 유틸메뉴 */
+.header .util_menu {overflow:hidden;}
+.header .util_menu a {color:#444; float:left; font-size:14px; font-weight:500; line-height:1.714em;}
+.header .util_menu a ~ a {margin-left:24px;}
+.header .util_menu a.mall {background-color:#2A47BF; border-radius:4px; color:#fff; box-sizing:border-box; padding:3px 8px; line-height:1.214em;}
+
+/* ============================== [ GNB헤더영역 ] ========================================================================================== */
+.gnb_area {transition:background .3s;}
+.gnb_area .gnb_wrap {width:1192px; margin:0 auto; box-sizing:border-box; display:flex; align-items:center; z-index:1;}
+
+/* 로고 */
+.gnb_area .gnb_wrap .logo a {display:block; height:30px; width:267px; background:url(../images/common/logo.svg) no-repeat 0 0; background-size:267px 30px;}
+
+/* -------------------- GNB ---------------------------------------- */
+.gnb_area .gnb_wrap .gnb {margin-left:auto; opacity:0.9999;}
+
+/* depth_01 */
+.gnb_wrap .gnb > ul {}
+.gnb_wrap .gnb > ul > li {float:left; position:relative;}
+.gnb_wrap .gnb > ul > li ~ li {margin-left:48px;}
+.gnb_wrap .gnb > ul > li .depth_01 {font-weight:700; line-height:1.188em; padding:28px 0; box-sizing:border-box; display:block; border-bottom:2px solid transparent;}
+.gnb_wrap .gnb > ul > li .depth_01 {transition:color .3s, border-color .3s;}
+.gnb_wrap .gnb > ul > li.on .depth_01 {color:#2a47bf; border-color:#2a47bf;}
+.gnb_wrap .gnb > ul > li.current .depth_01 {color:#2a47bf;}
+
+/* depth_02 */
+.gnb_wrap .sub_wrap {position:absolute; left:50%; top:70%; transform:translateX(-50%); width:100px; opacity:0; visibility:hidden; z-index:1;}
+.gnb_wrap .sub_wrap {transition:top .3s .15s, opacity .3s .15s;}
+.gnb_wrap .gnb > ul > li.on .sub_wrap {top:100%; opacity:1; visibility:visible;}
+.gnb_wrap .sub_wrap ul {padding:24px 0 32px;}
+.gnb_wrap .sub_wrap ul li ~ li {padding-top:24px;}
+.gnb_wrap .sub_wrap ul li .depth_02 {display:block; text-align:center; font-size:14px; font-weight:500; line-height:1.214em;}
+
+/* gnb_bg */
+#header .gnb_bg {display:block; content:''; width:100%; height:0; background-color:#fff; position:absolute; left:0; top:125px; z-index:-1;}
+#header .gnb_bg {transition:height .3s;}
+
+/* ************************************************************************************************************************************************************
+						《 Mobile헤더 》
+************************************************************************************************************************************************************ */
+.m_header {display:none; width:100%; padding:12px 20px; box-sizing:border-box; position:fixed; left:0; top:0; z-index:998;}
+.m_header.on {background-color:#fff;}
+
+/* ============================== [ 상단고정영역 ] ========================================================================================== */
+
+/* 로고 */
+.m_header .logo a {display:block; height:20px; width:178px; background:url(../images/common/logo.svg) no-repeat 0 0; background-size:178px 20px;}
+
+/* 햄버거버튼 */
+.gnb_ctrl {position:fixed; right:20px; top:10px; height:24px; width:24px; z-index:999;}
+.gnb_ctrl .btn_nav {display:block; box-sizing:border-box; height:100%; width:100%;}
+.gnb_ctrl .btn_nav .line {display:block; height:2px; width:20px; background-color:#111; position:absolute; left:2px;}
+.gnb_ctrl .btn_nav .line {transition:0.1s;}
+.gnb_ctrl .btn_nav .line:nth-child(1) {top:4px;}
+.gnb_ctrl .btn_nav .line:nth-child(2) {top:50%; transform:translateY(-50%);}
+.gnb_ctrl .btn_nav .line:nth-child(3) {bottom:4px;}
+.gnb_ctrl .btn_nav.active .line:nth-child(1) {top:50%; transform:translateY(-50%) rotate(45deg);}
+.gnb_ctrl .btn_nav.active .line:nth-child(2) {opacity:0;}
+.gnb_ctrl .btn_nav.active .line:nth-child(3) {bottom:50%; transform:translateY(50%) rotate(-45deg);}
+
+/* ============================== [ 모바일 GNB영역 ] ========================================================================================== */
+.m_gnb_area {position:fixed; left:100%; top:0; height:100vh; width:100%; background-color:#fff; z-index:998;}
+.m_gnb_area {transition:left .3s;}
+.m_header.active .m_gnb_area {left:0;}
+.m_gnb_scroll {height:calc(100% - 44px); min-width:320px; overflow-y:auto;}
+
+/* 유틸메뉴 */
+.m_util_menu {width:100%; padding:14px 60px 14px 0; box-sizing:border-box; text-align:right;}
+.m_util_menu a {color:#444; font-size:14px; font-weight:500; line-height:1.214em; display:inline-block; vertical-align:middle;}
+.m_util_menu a ~ a {margin-left:16px;}
+
+/* -------------------- 로그인전 ---------------------------------------- */
+.m_logout {padding:0 20px; margin:24px 0 20px;}
+.m_logout .login_txt {font-weight:700; font-size:20px; line-height:1.5em;}
+
+/* -------------------- 로그인후 ---------------------------------------- */
+.m_login {padding:0 20px; margin:24px 0 32px;}
+
+/* 레벨정보 */
+.m_login .user_info {display:flex; align-items:center;}
+.m_login .user_info .prf_img {height:64px; width:64px; border-radius:50%; overflow:hidden;}
+.m_login .user_info .prf_img .img {height:100%; width:100%;}
+.m_login .user_info .prf_img .img img {height:100%; width:100%; display:block; object-fit:cover;}
+.m_login .user_info .lev_cotn {margin-left:16px;}
+.m_login .user_info .lev_cotn .name {font-weight:700; font-size:20px; line-height:1.5em;}
+.m_login .user_info .lev_cotn .name a {text-decoration:underline; margin-right:2px;}
+.m_login .user_info .lev_cotn .level {font-size:14px; line-height:1.571em; margin-top:4px;}
+.m_login .user_info .lev_cotn .level span {font-weight:700; color:#2a47bf; margin-right:4px;}
+
+/* 멤버십정보 */
+.m_login .mem_cotn {margin-top:24px; display:flex;}
+.m_login .mem_cotn .state {flex:1; text-align:center;}
+.m_login .mem_cotn .state .txt {font-size:12px; font-weight:700; line-height:1.667em;}
+.m_login .mem_cotn .state .num {font-size:28px; line-height:1.286em; color:#2a47bf; margin-top:4px;}
+.m_login .mem_cotn .state.more .num {padding-right:16px; background:url(../images/common/icon_plus_blue.svg) no-repeat right center; background-size:16px;}
+
+/* -------------------- GNB ---------------------------------------- */
+.m_gnb_wrap {border-top:8px solid #f8f8f8;}
+.m_gnb_wrap .menu_wrap {padding:32px 20px 40px; position:relative;}
+.m_gnb_wrap .menu_wrap::after {display:block; content:''; width:100%; height:8px; background-color:#f8f8f8; position:absolute; left:0; bottom:0;}
+.m_gnb_wrap .menu_wrap .menu_tit {display:inline-block; margin-bottom:20px; font-size:14px; line-height:1.571em; color:#999;}
+.m_gnb_wrap .menu_wrap .sub_wrap {overflow:hidden;}
+.m_gnb_wrap .menu_wrap .sub_wrap .menu_link {width:50%; font-weight:500; line-height:1.188em; float:left;}
+.m_gnb_wrap .menu_wrap .sub_wrap .menu_link:nth-child(n+3) {margin-top:20px;}
+
+/* 버튼 */
+.m_gnb_area .btn_wrap {padding:0 20px; margin:32px 0;}
+
+
+/* ************************************************************************************************************************************************************
+						《 FOOTER 》
+************************************************************************************************************************************************************ */
+#footer {background-color:#333333; border-top:1px solid #666666;}
+#footer .cotn {width:1192px; margin:0 auto; padding:120px 0; box-sizing:border-box; background-color:#333333;}
+
+/* ============================== [ foot링크 ] ========================================================================================== */
+.fnb {display:flex; align-items:center;}
+.fnb .foot_link .link_wrap {display:inline-block; position:relative;}
+.fnb .foot_link .link_wrap ~ .link_wrap {margin-left:14px;}
+.fnb .foot_link .link_wrap ~ .link_wrap::after {display:block; content:''; background-color:#777; height:12px; width:1px; position:absolute; left:-9px; top:2px;}
+.fnb .foot_link .link_wrap a {position:relative; display:inline-block; color:#777; font-size:14px; font-weight:500; line-height:1.214em;}
+.fnb .foot_link .link_wrap a.privacy {color:#fff;}
+.fnb .foot_link .link_wrap a ~ a {margin-left:14px;}
+.fnb .foot_link .link_wrap a ~ a::after {display:block; content:''; background-color:#777; height:12px; width:1px; position:absolute; left:-9px; top:2px;}
+.fnb .sns {margin-left:auto;}
+.fnb .sns a {display:inline-block; vertical-align:middle; height:36px; width:36px; background-repeat:no-repeat; background-size:36px; background-position:0 0;}
+.fnb .sns a ~ a {margin-left:16px;}
+.fnb .sns a.insta {background-image:url(../images/common/icon_insta.svg);}
+.fnb .sns a.ytb {background-image:url(../images/common/icon_ytb.svg);}
+.fnb .sns a.fb {background-image:url(../images/common/icon_fb.svg);}
+
+/* ============================== [ 기본정보 ] ========================================================================================== */
+.corp_info {border-top:1px solid #484848; margin-top:16px; padding-top:52px;}
+.corp_info .logo .img {height:30px; width:267px;}
+.corp_info .logo .img img {height:auto; width:100%;}
+.corp_info .info_wrap {margin-top:32px; display:flex; align-items:center;}
+.corp_info .info_wrap .txt ~ .txt {margin-top:4px;}
+.corp_info .info_wrap .txt * {display:inline-block; font-size:14px; line-height:1.571em; color:#777; position:relative; word-break:keep-all;}
+.corp_info .info_wrap .txt address ~ p,
+.corp_info .info_wrap .txt p ~ p {margin-left:10px;}
+.corp_info .info_wrap .txt address ~ p::after,
+.corp_info .info_wrap .txt p ~ p::after {display:block; content:''; height:10px; width:1px; background-color:#777; position:absolute; left:-7px; top:5px;}
+.corp_info .info_wrap .ccm {margin-left:auto;}
+.corp_info .info_wrap .ccm .img {height:72px; width:72px;}
+.corp_info .info_wrap .ccm .img img {display:block; height:100%; width:100%;}
+
+
+/* ************************************************************************************************************************************************************
+						《 아이콘 》
+************************************************************************************************************************************************************ */
+
+/* -------------------- icon 16x16 ---------------------------------------- */
+[class^="i_16"] {background-repeat:no-repeat; background-position:center; display:block; height:16px; width:16px;}
+
+.i_16.arr_left {background-image:url(../images/common/arr_left_16.svg);}
+.i_16.arr_right {background-image:url(../images/common/arr_right_16.svg);}
+.i_16.arr_up {background-image:url(../images/common/arr_up_16.svg);}
+.i_16.arr_down {background-image:url(../images/common/arr_down_16.svg);}
+
+/* -------------------- icon 20x20 ---------------------------------------- */
+[class^="i_20"] {background-repeat:no-repeat; background-position:center; display:block; height:20px; width:20px;}
+
+.question {background-image:url(../images/common/icon_question.svg);}
+.clndar {background-image:url(../images/common/icon_calendar.svg);}
+
+/* -------------------- 서비스 icon ---------------------------------------- */
+.i_svc {background-repeat:no-repeat; background-position:center; background-size:100%; display:block; height:88px; width:88px;}
+.i_svc.evt {background-image:url(../images/common/icon_svc_evt.png);}
+.i_svc.deliv {background-image:url(../images/common/icon_svc_deliv.png);}
+.i_svc.stmp {background-image:url(../images/common/icon_svc_stmp.png);}
+.i_svc.story {background-image:url(../images/common/icon_svc_story.png);}
+
+/* ************************************************************************************************************************************************************
+						《 폰트 스타일 》
+************************************************************************************************************************************************************ */
+.tit_16 {font-weight:700; line-height:1.500em;}
+
+/* ************************************************************************************************************************************************************
+						《 버튼 스타일 》
+************************************************************************************************************************************************************ */
+.btn_wrap {display:flex; overflow:hidden; margin-top:40px;}
+.btn_wrap .btn {display:inline-block; border-radius:8px; box-sizing:border-box; flex:1; text-align:center; height:58px; font-size:18px; font-weight:700; line-height:3.222em;}
+.btn_wrap .btn ~ .btn {margin-left:8px;}
+.btn_wrap .btn span {vertical-align:middle;}
+
+/* ============================== [ 높이 ] ========================================================================================== */
+.btn_wrap .btn.h_40 {height:40px; line-height:2.857em; font-size:14px;}
+
+/* ============================== [ 메인버튼 ] ========================================================================================== */
+.btn_wrap .btn.main {background-color:#2A47BF; color:#fff;}
+
+/* ============================== [ 서브버튼 ] ========================================================================================== */
+.btn_wrap .btn.bg_gray {background-color:#eee; color:#666;}
+.btn_wrap .btn.bdr_gray {border:1px solid #eee; color:#666;}
+
+/* 버튼비활성화 */
+.btn_wrap .btn.inactv,
+.btn_wrap .btn:disabled {background-color:#F8F8F8; color:#ccc;}
+.btn_wrap .btn.bdr_gray.inactv,
+.btn_wrap .btn.bdr_gray:disabled {border-color:#eee; background-color:#fff;}
+
+/* ************************************************************************************************************************************************************
+						《 폼 스타일 》
+************************************************************************************************************************************************************ */
+
+/* ============================== [ Input Text ] ========================================================================================== */
+.form_txt {}
+.form_txt ~ .form_txt {margin-top:32px;}
+.form_txt .tit_field {margin-bottom:8px;}
+.form_txt .tit_field p {font-weight:500; line-height:1.188em;}
+.form_txt .tit_field p span {display:inline-block; position:relative;}
+.form_txt .tit_field p.necd span {padding-right:16px; background:url(../images/common/icon_necd.svg) no-repeat right top; background-size:16px;}
+.form_txt .txt {position:relative;}
+.form_txt .txt ~ .txt {margin-top:12px;}
+.form_txt .txt input {display:block; box-sizing:border-box; border:1px solid #eee; background-color:#fff; border-radius:10px; padding:0 52px 0 16px; height:52px; width:100%; font-size:14px;}
+.form_txt .txt input {transition:border-color 0.4s;}
+.form_txt .txt input:disabled {background-color:#F8F8F8; color:#999;}
+.form_txt .txt input:focus {border-color:#4C3D3B;}
+.form_txt .txt input[type="password"] {padding-right:88px;}
+
+/* 입력값 오류시 */
+.form_txt.wrn .txt input {border-color:#FF0000;}
+
+/* 상태메세지 */
+.msg_wrap {margin-top:8px; display:none;}
+.msg_wrap .form_msg {font-size:12px; line-height:1.667em;}
+.form_txt.wrn .msg_wrap {display:block;}
+.form_txt.wrn .msg_wrap .form_msg {color:#ff0000;}
+
+/* 입력텍스트삭제 버튼 */
+.btn_del {display:none; background-image:url(../images/common/icon_close_circle.svg); background-size:100%; background-repeat:no-repeat; background-position:0 0; height:20px; width:20px; position:absolute; right:16px; top:50%; transform:translateY(-50%);}
+
+/* 암호보기 버튼 */
+.form_txt .txt .btn_pw {display:none; background-size:100%; background-repeat:no-repeat; background-position:0 0; height:20px; width:20px; position:absolute; right:52px; top:50%; transform:translateY(-50%);}
+.form_txt .txt .btn_pw.show {background-image:url(../images/common/icon_pw_show.svg);}
+.form_txt .txt .btn_pw.hide {background-image:url(../images/common/icon_pw_hide.svg);}
+
+/* 인풋 + 버튼 */
+.form_txt.btn_with .txt input {padding-right:134px;}
+.form_txt.btn_with .btn_del {right:98px;}
+.form_txt.btn_with .txt .in_form {position:absolute; right:16px; top:12px; overflow:hidden;}
+.form_txt.btn_with .txt .in_form .btn {display:block; border-radius:4px; color:#666; font-size:12px; font-weight:500; height:28px; box-sizing:border-box; padding:7px 12px; border:1px solid #eee; background-color:#f8f8f8;}
+
+/* ============================== [ Input[type="date"] ] ========================================================================================== */
+.form_txt .txt input[type='date'] {padding-right:16px;}
+input[type='date']::before {content:attr(data-placeholder); width:100%; color:#999;}
+input[type="date"]::-webkit-calendar-picker-indicator {background:url(../images/common/icon_calendar.svg) no-repeat; background-position:right 16px top 16px; background-size:20px 20px; display:block; width:100%; height:100%; z-index:1; position:absolute; right:0; top:0;}
+input[type='date']:focus::before,
+input[type='date']:valid::before {display:none;}
+/* ============================== [ Search Form ] ========================================================================================== */
+.form_search {position:relative; overflow:hidden;}
+.form_search input {box-sizing:border-box; border-radius:10px; background-color:#f8f8f8; padding:16px 68px 16px 12px; height:52px; width:100%; font-size:14px; line-height:1.214em;}
+.form_search input ~ .btn_del {right:44px;}
+.form_search .btn_search {height:20px; width:20px; position:absolute; right:12px; top:16px; background:url(../images/common/icon_search.svg) no-repeat 0 0; background-size:20px;}
+
+/* ============================== [ Textarea ] ========================================================================================== */
+.form_text_area {position:relative;}
+.form_text_area .text_area {border:1px solid #eee; border-radius:10px; background-color:#fff; box-sizing:border-box; height:135px; width:100%; padding:16px 16px 45px; overflow:hidden;}
+.form_text_area .text_area {transition:border-color 0.4s;}
+.text_area textarea {box-sizing:border-box; height:100%; width:100%; font-size:14px; line-height:1.214em; outline:none; resize:none;}
+.text_area .ltr_len {position:absolute; right:16px; bottom:16px;}
+.text_area .ltr_len p {color:#ccc; font-size:14px; line-height:1.214em; text-align:right;}
+.text_area .ltr_len p {transition:color 0.4s;}
+.text_area.on {border-color:#4C3D3B;}
+.text_area textarea:focus ~ .ltr_len p,
+.text_area .ltr_len.on p {color:#666;}
+
+/* ============================== [ Select Box ] ========================================================================================== */
+.form_select {position:relative; background-color:#fff; border-radius:10px;}
+.form_select select {display:inline-block; box-sizing:border-box; border:1px solid #eee; border-radius:10px; padding:17px 52px 17px 16px; height:52px; width:100%; font-size:14px; font-weight:500; text-overflow:ellipsis; white-space:nowrap; word-wrap:normal; position:relative; z-index:1; cursor:pointer;}
+.form_select select {transition:border-color 0.3s;}
+.form_select select:focus {border-color:#4C3D3B;}
+.form_select select:disabled {background-color:#F8F8F8; color:#999;}
+.form_select .icon_select {display:block; background:url(../images/common/arrow_down_bk.svg) no-repeat 0 0; background-size:100%; height:20px; width:20px; position:absolute; right:16px; top:50%; transform:translateY(-50%);}
+
+/* ============================== [ Check Box ] ========================================================================================== */
+.chk_set {}
+.chk_set .form_chk {}
+.form_chk {display:block; padding-left:30px; position:relative; cursor:pointer;}
+.form_chk ~ .form_chk {margin-top:22px;}
+.form_chk .txt {vertical-align:middle; line-height:1.5em; display:inline-block; user-select:none;}
+.form_chk strong.txt {font-weight:700;}
+.form_chk .icon {position:absolute; left:0; top:0; height:22px; width:22px; box-sizing:border-box; background-color:#fff; border:1px solid #ddd; border-radius:50%;}
+.form_chk .icon {transition:background 0.4s, border-color 0.4s;}
+.form_chk .icon::after {display:block; content:''; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); height:14px; width:14px; background-image:url(../images/common/icon_chk_gy.svg); background-size:100%; background-repeat:no-repeat;}
+.form_chk .icon::after {transition:background 0.4s;}
+.form_chk input[type="checkbox"] {height:0; width:0; position:absolute;}
+.form_chk input:checked ~ .icon {border-color:#4C3D3B; background-color:#4C3D3B;}
+.form_chk input:checked ~ .icon::after {background-image:url(../images/common/icon_chk_wh.svg);}
+.form_chk input:disabled ~ .icon {background-color:#eee; border-color:#eee;}
+.form_chk input:disabled ~ .icon::after {background-image:url(../images/common/icon_chk_wh.svg);}
+.form_chk input:disabled ~ .txt {color:#999;}
+
+/* Check Box small */
+.form_chk.small {padding-left:26px;}
+.form_chk.small .icon {height:18px; width:18px;}
+.form_chk.small .icon::after {height:10px; width:10px;}
+.form_chk.small .txt {font-size:12px; line-height:1.667em;}
+
+/* 약관동의 */
+.poli_wrap {position:relative; padding-right:24px;}
+.poli_wrap .btn_policy {position:absolute; right:0; top:3px;}
+.poli_wrap .form_chk .txt {font-size:14px; line-height:1.714em;}
+
+/* ============================== [ Radio Button ] ========================================================================================== */
+.rdo_set {}
+.rdo_set .form_rdo {}
+.rdo_set .form_rdo ~ .form_rdo {margin-top:16px;}
+.form_rdo {display:block; padding-left:30px; position:relative; cursor:pointer;}
+.form_rdo ~ .form_rdo {margin-top:24px;}
+.form_rdo .txt {vertical-align:middle; font-size:14px; line-height:1.571em;}
+.form_rdo strong.txt {font-size:16px; font-weight:700;}
+.form_rdo .icon {position:absolute; left:0; top:0; height:22px; width:22px; box-sizing:border-box; background-color:#fff; border:2px solid #ddd; border-radius:50%;}
+.form_rdo .icon {transition:border-color 0.4s;}
+.form_rdo input[type="radio"] {height:0; width:0; position:absolute;}
+.form_rdo input:checked ~ .icon {border-width:6px; border-color:#4C3D3B;}
+.form_rdo input:disabled ~ .icon {background-color:#eee;}
+.form_rdo input:disabled ~ .txt {color:#999;}
+
+/* ============================== [ Switch ] ========================================================================================== */
+.form_switch {display:block; cursor:pointer; height:24px; width:42px; position:relative;}
+.form_switch .icon {height:20px; width:20px; border-radius:50%; background-color:#fff; box-shadow:1px 1px 2px rgba(0, 0, 0, 0.08); position:absolute; left:2px; top:2px; z-index:1;}
+.form_switch .icon {transition:left 0.4s;}
+.form_switch .bg {display:block; border-radius:12px; background-color:#cccccc; height:100%; width:100%; position:absolute; left:0; top:0;}
+.form_switch .bg {transition:background-color 0.4s;}
+.form_switch input:checked ~ .icon {left:20px;}
+.form_switch input:checked ~ .bg {background-color:#4C3D3B;}
+.form_switch input:disabled ~ .bg {background-color:#eeeeee;}
+
+/* ************************************************************************************************************************************************************
+						《 라벨 》
+************************************************************************************************************************************************************ */
+
+/* ============================== [ 상태라벨 ] ========================================================================================== */
+.flag_wrap {overflow:hidden;}
+.flag_wrap .flag {border-radius:2px; box-sizing:border-box; color:#fff; float:left; font-size:11px; font-weight:700; line-height:2em; height:20px; padding:0 6px;}
+.flag_wrap .flag ~ .flag {margin-left:4px;}
+.flag_wrap .flag.new {background-color:#2a47bf; font-weight:600;}
+.flag_wrap .flag.best {background-color:#9b6635;}
+.flag_wrap .flag.hot {background-color:#4c3d3b;}
+.flag_wrap .flag.eq {background-color:#e6eaf9; color:#2a47bf;}
+.flag_wrap .flag.reward {background-color:#cc9e4e; font-weight:500;}
+.flag_wrap .flag.end {background-color:#111; font-weight:500;}
+
+
+/* ************************************************************************************************************************************************************
+						《 툴팁 》
+************************************************************************************************************************************************************ */
+.tooltip_wrap {position:relative;}
+.tooltip_wrap .cotn_wrap {display:inline-block; vertical-align:middle;}
+.tooltip_wrap .btn_tool_wrap {display:inline-block; vertical-align:middle; height:20px; width:20px; position:relative;}
+.tooltip_wrap .btn_tool_wrap .tooltip {display:none; background-color:#111; box-sizing:border-box; border-radius:4px; padding:8px 12px; position:absolute; top:26px; left:50%; transform:translateX(-50%); z-index:5; white-space:nowrap;}
+.tooltip_wrap .btn_tool_wrap .tooltip::before {display:none; content:''; height:5px; width:10px; background:url(../images/common/icon_tool.svg) no-repeat 0 0; background-size:10px 5px; position:absolute; top:-4px; left:50%; transform:translateX(-50%);}
+.tooltip_wrap .btn_tool_wrap .tooltip p {color:#fff; font-size:12px; font-weight:600; line-height:1.5em;}
+.tooltip_wrap.on .btn_tool_wrap .tooltip,
+.tooltip_wrap .btn_tool_wrap .tooltip::before {display:block;}
+
+/* ************************************************************************************************************************************************************
+						《 탭메뉴 》
+************************************************************************************************************************************************************ */
+.tab_menu {}
+.tab_menu .btn_tab {}
+.tab_menu .btn_tab a {display:block;}
+
+/* ============================== [ 라인탭 ] ========================================================================================== */
+.tab_menu.line {background-color:#fff; box-sizing:border-box; height:48px; width:100%; z-index:1; display:flex; border-bottom:1px solid #ccc;}
+.tab_menu.line .btn_tab {flex:1; width:auto; text-align:center;}
+.tab_menu.line .btn_tab a {position:relative; box-sizing:border-box; color:#666; font-size:18px; line-height:1.389em; padding-bottom:23px; height:100%;}
+.tab_menu.line .btn_tab a::after {display:none; background-color:#111; content:''; width:100%; height:1px; position:absolute; left:0; bottom:-1px; z-index:1;}
+.tab_menu.line.ctgry .btn_tab a::after,
+.tab_menu.line.slide_line .btn_tab a::after {bottom:0;}
+.tab_menu.line.ctgry {display:block; border-color:#eee;}
+.tab_menu.line.slide_line {display:block;}
+
+/* 카테고리탭 */
+.tab_menu.line.ctgry .btn_tab {flex:none;}
+.tab_menu.line.ctgry .btn_tab a {padding:14px 16px 15px; font-size:16px; line-height:1.188em;}
+
+/* 라인탭:활성화 */
+.tab_menu.line .btn_tab.on a {color:#111; font-weight:700;}
+.tab_menu.line .btn_tab.on a::after {display:block;}
+
+/* ============================== [ 버튼탭 ] ========================================================================================== */
+.tab_menu.btn {background-color:#fff; box-sizing:border-box; display:flex; justify-content:center; flex-wrap:wrap; margin:-8px 0 0 -8px;}
+.tab_menu.btn .btn_tab {width:auto; margin:8px 0 0 8px;}
+.tab_menu.btn .btn_tab a {border:1px solid #EEEEEE; background-color:#fff; border-radius:50px; box-sizing:border-box; color:#666; padding:12px 16px; font-size:14px; line-height:1.214em;}
+.tab_menu.btn .btn_tab.on a {border-color:#4C3D3B; background-color:#4C3D3B; color:#fff; font-weight:700;}
+
+
+/* ************************************************************************************************************************************************************
+						《 유의사항 》
+************************************************************************************************************************************************************ */
+.noti_wrap {}
+.noti_wrap .tit {font-size:14px; line-height:1.571em; color:#444;}
+.noti_wrap .info_txt {margin-top:4px;}
+.noti_wrap .info_txt p {color:#666; font-size:12px; line-height:1.667em; position:relative; padding-left:18px; word-break:keep-all;}
+.noti_wrap .info_txt p ~ p {margin-top:4px;}
+.noti_wrap .info_txt p::after {content:''; display:block; height:2px; width:2px; background-color:#666; border-radius:50%; position:absolute; left:8px; top:8px;}
+
+
+/* ************************************************************************************************************************************************************
+						《 Paging 》
+************************************************************************************************************************************************************ */
+.paging {margin-top:40px; text-align:center;}
+.paging a {display:inline-block; border-radius:4px; font-weight:700; line-height:2em; height:32px; width:32px; vertical-align:middle;}
+.paging a ~ a {margin-left:12px;}
+.paging a.on {background-color:#2a47bf; color:#fff;}
+.paging .i_ellipsis {display:inline-block; height:16px; width:16px; margin-left:12px; background:url(../images/common/icon_ellipsis.svg) no-repeat 0 0; vertical-align:middle;}
+.paging .prev {margin-right:8px;}
+.paging .next {margin-left:20px;}
+
+/* ************************************************************************************************************************************************************
+						《 이벤트목록 》
+************************************************************************************************************************************************************ */
+.evt_wrap {position:relative;}
+.evt_wrap .img_area {position:relative; height:277px; width:100%; border-radius:12px; overflow:hidden;}
+.evt_wrap .img_area .img {height:100%; width:100%;}
+.evt_wrap .img_area .img img {height:100%; width:100%; display:block; object-fit:cover;}
+.evt_wrap .img_area .flag_wrap {position:absolute; left:24px; top:24px;}
+.evt_wrap .img_area .flag_wrap.end_flag {position:absolute; left:inherit; right:24px; top:24px;}
+.evt_wrap .txt_area {margin-top:16px;}
+.evt_wrap .txt_area .tit {color:#444; font-size:20px; font-weight:700; line-height:1.5em; word-break:keep-all;}
+.evt_wrap .txt_area .date {color:#444; font-size:14px; line-height:1.571em; margin-top:8px;}
+.evt_wrap .state {display:none; position:absolute; left:0; bottom:0; width:100%; background:rgba(51, 51, 51, 0.8); padding:14px 8px; box-sizing:border-box;}
+.evt_wrap.on_dim .state {display:block;}
+.evt_wrap .state .txt {color:#fff; line-height:1.5em; text-align:center;}
+
+/* ************************************************************************************************************************************************************
+						《 고객지원 공통영역 》
+************************************************************************************************************************************************************ */
+.sec_cs {width:100%; overflow:hidden; background:url(../images/temp/bg_cs.jpg) no-repeat 0 0; background-size:cover;}
+.sec_cs .cotn {width:1192px; margin:0 auto; padding:120px 0;}
+
+/* 타이틀영역 */
+.sec_tit {position:relative; box-sizing:border-box;}
+.sec_tit .menu {color:#2a47bf; font-weight:700; font-size:24px; line-height:1.208em;}
+.sec_tit .tit {font-weight:700; font-size:42px; line-height:1.19em; margin-top:16px;}
+.sec_tit .txt {color:#666; font-size:20px; line-height:1.4em; margin-top:16px;}
+
+/* 고객센터정보 */
+.sec_cs .cs_info {margin-top:40px;}
+.sec_cs .cs_info .contact {font-weight:600; font-size:26px; line-height:1.308em;}
+.sec_cs .cs_info .sb_tit {color:#444; font-size:18px; line-height:1.444em; margin-top:8px;}
+
+/* 버튼 */
+.sec_cs .btn_wrap {margin-top:40px; width:447px;}
+.sec_cs .btn_wrap .btn {font-size:18px; line-height:2.189em; height:45px; border:1px solid #111; color:#111;}
+.sec_cs .btn_wrap .btn {transition:background-color .3s, color .3s;}
+.sec_cs .btn_wrap .btn:hover {background-color:#111; color:#fff;}
+.sec_cs .btn_wrap .btn span {font-weight:500;}
+
+/**************************************************************************************************************************************************************************************************
+*************************************************** 《《《 MOBILE Layout 》》》 ***************************************************************************************************************
+***************************************************************************************************************************************************************************************************/
+
+
+@media only screen and (max-width:767px) {
+	/* ============================== [ 공통레이아웃 ] ========================================================================================== */
+
+	/* -------------------- 서브페이지 타이틀영역 ---------------------------------------- */
+	.sub {padding-bottom:40px;}
+	.wd_auto {width:100%;}
+
+	.sub_tit_area {padding:76px 20px 32px;}
+	.sub_tit_area .title {font-size:22px; line-height:1.182em;}
+	.sub_tit_area .sub_txt {font-size:14px; line-height:1.286em; margin-top:12px;}
+
+	/* ============================== [ 탑버튼 ] ========================================================================================== */
+	.go_top {right:20px; bottom:20px;}
+
+
+	/* ============================== [ APP 다운로드 ] ========================================================================================== */
+	.app_down .btn_down {width:44px; padding:8px 2px;}
+	.app_down .btn_down .icon_down {height:24px; width:24px;}
+	.app_down .btn_down span {margin-top:8px;}
+
+	/* ************************************************************************************************************************************************************
+							《 헤더 》
+	************************************************************************************************************************************************************ */
+	.header {display:none;}
+	.m_header {display:block;}
+
+	/* ************************************************************************************************************************************************************
+						《 FOOTER 》
+	************************************************************************************************************************************************************ */
+	#footer .cotn {width:100%; padding:100px 20px;}
+
+	/* ============================== [ foot링크 ] ========================================================================================== */
+	.fnb {display:block;}
+	.fnb .foot_link .link_wrap {display:block; text-align:center;}
+	.fnb .foot_link .link_wrap ~ .link_wrap {margin:16px 0 0 0;}
+	.fnb .foot_link .link_wrap ~ .link_wrap::after {display:none;}
+	.fnb .foot_link .link_wrap a {font-size:12px; line-height:1.167em;}
+	.fnb .sns {margin-top:20px; text-align:center;}
+
+	/* ============================== [ 기본정보 ] ========================================================================================== */
+	.corp_info {padding-top:32px;}
+	.corp_info .logo .img {margin:0 auto; height:auto; width:194px;}
+	.corp_info .info_wrap {display:block; margin-top:20px;}
+	.corp_info .info_wrap .txt {text-align:center;}
+	.corp_info .info_wrap .txt ~ .txt {margin-top:8px;}
+	.corp_info .info_wrap .txt * {font-size:12px; line-height:1.417em; display:inline;}
+	.corp_info .info_wrap .txt address ~ p::after,
+	.corp_info .info_wrap .txt p ~ p::after {top:2px;}
+	.corp_info .info_wrap .ccm {margin-top:16px;}
+	.corp_info .info_wrap .ccm .img {margin:0 auto; height:52px; width:52px;}
+
+	/* ************************************************************************************************************************************************************
+						《 아이콘 》
+	************************************************************************************************************************************************************ */
+
+	/* -------------------- 서비스 icon ---------------------------------------- */
+	.i_svc {height:60px; width:60px; margin:0 auto;}
+
+	/* ************************************************************************************************************************************************************
+						《 버튼 스타일 》
+	************************************************************************************************************************************************************ */
+	.btn_wrap {margin-top:20px;}
+	.btn_wrap .btn {border-radius:4px; height:48px; font-size:16px; line-height:3em;}
+
+
+	/* ************************************************************************************************************************************************************
+						《 탭메뉴 》
+	************************************************************************************************************************************************************ */
+
+	/* ============================== [ 라인탭 ] ========================================================================================== */
+	.tab_menu.line.slide_line .btn_tab {flex:none;}
+	.tab_menu.line .btn_tab a {font-size:16px; line-height:1.188em; padding:14px 16px 15px;}
+	.tab_menu.line.ctgry .swiper {padding-left:20px;}
+
+	/* ************************************************************************************************************************************************************
+						《 Paging 》
+	************************************************************************************************************************************************************ */
+	.paging {display:none;}
+
+
+	/* ************************************************************************************************************************************************************
+						《 이벤트목록 》
+	************************************************************************************************************************************************************ */
+	.evt_wrap {width:100%;}
+	.evt_wrap .img_area {height:auto; border-radius:8px;}
+	.evt_wrap .img_area .flag_wrap {left:12px; top:12px;}
+	.evt_wrap .img_area .flag_wrap.end_flag {right:12px; top:12px;}
+	.evt_wrap .prd_info .tit {font-size:16px; font-weight:500; line-height:1.188em; color:#111;}
+	.evt_wrap .prd_info .date {margin-top:0;}
+	.evt_wrap .state {padding:6px 4px;}
+	.evt_wrap .state .txt {line-height:1.714em; font-size:14px;}
+
+
+	/* ************************************************************************************************************************************************************
+						《 고객지원 공통영역 》
+	************************************************************************************************************************************************************ */
+	.sec_cs .cotn {width:auto; padding:80px 20px;}
+
+	/* 타이틀영역 */
+	.sec_tit {text-align:center;}
+	.sec_tit .menu {font-size:14px; line-height:1.214em;}
+	.sec_tit .tit {font-size:24px; line-height:1.292em; margin-top:4px;}
+	.sec_tit .txt {font-size:14px; line-height:1.214em; margin-top:8px;}
+
+	/* 고객센터정보 */
+	.sec_cs .cs_info {margin-top:24px; text-align:center;}
+	.sec_cs .cs_info .contact {font-size:16px; line-height:1.188em;}
+	.sec_cs .cs_info .sb_tit {font-size:14px; line-height:1.214em; margin-top:4px;}
+
+	/* 버튼 */
+	.sec_cs .btn_wrap {margin-top:24px; width:100%;}
+	.sec_cs .btn_wrap .btn {font-size:14px; line-height:2.2em; height:33px;}
+}
+
+@media only screen and (max-width:319px) {
+	body, html{width:100%; min-width:320px;}
+}

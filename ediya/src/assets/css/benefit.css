@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+/* ************************************************************************************************************************************************************
+						《 멤버십/서비스안내CSS 》
+************************************************************************************************************************************************************ */
+/* ============================== [ 멤버십안내 ] ========================================================================================== */
+.benefit .sub {padding-bottom:0;}
+/* 멤버십안내 배너영역 */
+.membership_bnr {background-color:#F7F7F7; text-align:center; word-break:keep-all; width:100%; height:auto;}
+.membership_bnr .txt_area {padding-top:80px;}
+.membership_bnr .tit {font-weight:600; font-size:30px; line-height:1.2em;}
+.membership_bnr .sub_txt {margin-top:16px;}
+.membership_bnr .sub_txt .value {color:#2A47BF; display:inline-block; font-weight:700; font-size:20px; line-height:1.1em; margin-right:8px;}
+.membership_bnr .sub_txt .txt {display:inline-block; font-size:20px; line-height:1.1em;}
+.membership_bnr .img_wrap {max-width:580px; height:auto; margin:34px auto 0;}
+.membership_bnr .img_wrap img {display:block; width:100%;}
+
+/* 등급별 혜택안내 */
+.level_info {display:flex; margin:120px auto;}
+.level_info .info_box {border:1px solid #EEEEEE; border-radius:20px; box-shadow:0px 8px 10px rgb(0 0 0 / 4%); flex:1; padding:40px 32px; position:relative;}
+.level_info .info_box ~ .info_box {margin-left:32px;}
+.level_info .info_box .tit_wrap {display:flex; align-items:center; justify-content:space-between; padding-bottom:28px;}
+.level_info .info_box .tit_wrap .img_area {margin-left:16px; width:100px; height:100px;}
+.level_info .info_box .tit_wrap .img_area img {display:block; width:100%;}
+.info_box .tit_wrap .level {font-weight:700; font-size:26px; line-height:1.308em; margin-bottom:8px;}
+.info_box .tit_wrap .condition {color:#444444; font-weight:500; font-size:18px; line-height:1.167em;}
+.info_box .tit_wrap .condition em {font-weight:700; font-size:22px; color:#2A47BF; line-height:1.182em;}
+.info_box .benefit_area {border-top:1px solid #EEEEEE; padding-top:24px;}
+.info_box .benefit_area ~ .benefit_area {margin-top:28px;}
+.info_box .benefit_area .tit {padding-left:26px; position:relative; font-weight:500; font-size:18px; line-height:1.278em;}
+.info_box .benefit_area .tit:before {content:''; background:url(../images/common/icon_chk_blue.svg)no-repeat center; display:block; position:absolute; top:0; left:0; width:22px; height:22px;}
+.info_box .benefit_area .txt {color:#444444; margin-top:12px; padding-left:24px; position:relative; line-height:1.5em;}
+.info_box .benefit_area .txt:before {content:''; background-color:#CCCCCC; border-radius:50%; display:block; width:4px; height:4px; position:absolute; top:10px; left:8px;}
+.info_box .benefit_area .txt ~ .txt {margin-top:4px;}
+.info_box .emp_msg {font-size:14px; color:#999999; line-height:1.571em; position:absolute; bottom:40px; left:32px;}
+
+/* 이용안내 */
+.guide_sec {background-color:#FAF7F4; text-align:center; padding:40px 0 140px;}
+.guide_sec .tit {font-weight:700; font-size:32px; line-height:1.188em;}
+.guide_sec .emp_msg {font-size:14px; color:#999999; line-height:1.571em; margin-top:16px;}
+.guide_wrap {display:flex; align-items:center; justify-content:space-between; margin:40px auto 0; width:872px;}
+.guide_wrap .use_box {width:200px; }
+.guide_wrap .use_box ~ .use_box {margin-left:24px;}
+.guide_wrap .use_box .img_wrap {margin:0 auto; width:90px; height:90px;}
+.guide_wrap .use_box .img_wrap img {display:block; width:100%;}
+.guide_wrap .use_box .g_tit {font-weight:700; font-size:18px; line-height:1.333em; color:#4C3D3B; margin:16px 0 8px;}
+.guide_wrap .use_box .sub_txt {font-size:14px; color:#4C3D3B; line-height:1.5em;}
+
+/* ============================== [ 서비스안내 ] ========================================================================================== */
+/* 서비스안내 배너 영역 */
+.svc_bnr {background-color:#2A47BF; text-align:center; padding:80px 0;}
+.svc_bnr p {font-weight:600; font-size:30px; color:#fff; line-height:1.3em;}
+
+/* 서비스 목록 */
+.svc_li {padding:40px 0;}
+.svc_li:nth-child(2n) {background-color:#FAF7F4;}
+.svc_li .cotn {display:flex; align-items:center; justify-content:space-between; width:988px; margin:0 auto;}
+.svc_li .cotn .txt_area {width:376px;}
+.svc_li:nth-child(2n) .cotn {flex-direction:row-reverse;}
+.svc_li .cotn .txt_area .num {font-weight:600; font-size:22px; color:#4C3D3B; line-height:1.182em;}
+.svc_li .cotn .txt_area .svc_tit {font-weight:700; font-size:38px; line-height:1.289em; margin:16px 0 24px; word-break:keep-all;}
+.svc_li .cotn .txt_area .svc_tit em {color:#2A47BF;}
+.svc_li .cotn .txt_area .sub_txt {font-size:18px; color:#666666; line-height:1.5em; word-break:keep-all;}
+.svc_li .cotn .img_wrap {width:580px; height:100%;}
+.svc_li .cotn .img_wrap img {display:block; width:100%;}
+
+
+/**************************************************************************************************************************************************************************************************
+*************************************************** 《《《 MOBILE Layout 》》》 ***************************************************************************************************************
+***************************************************************************************************************************************************************************************************/
+@media only screen and (max-width:767px) {
+	/* ============================== [ 멤버십안내 ] ========================================================================================== */
+	/* 멤버십안내 배너영역 */
+	.membership_bnr {box-sizing:border-box; padding:20px;}
+	.membership_bnr .txt_area {padding-top:20px;}
+	.membership_bnr .tit {font-size:20px;}
+	.membership_bnr .sub_txt {margin-top:12px;}
+	.membership_bnr .sub_txt .value {font-size:16px;}
+	.membership_bnr .sub_txt .txt {font-size:16px; margin-top:4px;}
+	.membership_bnr .img_wrap {width:100%;}
+
+	/* 등급별 혜택안내 */
+	.level_info {box-sizing:border-box; flex-direction:column; margin:40px 0; padding:0 20px;}
+	.level_info .info_box {padding:24px 20px;}
+	.level_info .info_box ~ .info_box {margin:20px 0 0;}
+	.level_info .info_box .tit_wrap {padding-bottom:20px;}
+	.level_info .info_box .tit_wrap .img_area {margin-left:12px; width:88px; height:88px;}
+	.level_info .info_box .tit_wrap .level {font-size:20px;}
+	.level_info .info_box .tit_wrap .condition {font-size:14px; line-height:1.286em;}
+	.level_info .info_box .tit_wrap .condition em {font-size:16px; line-height:1.125em;}
+	.info_box .benefit_area {padding-top:12px;}
+	.info_box .benefit_area ~ .benefit_area {margin-top:24px;}
+	.info_box .benefit_area .tit {font-size:16px;}
+	.info_box .benefit_area .txt {font-size:14px;}
+	.info_box .benefit_area + .emp_msg {font-size:12px; position:initial; padding-top:20px;}
+
+	/* 이용안내 */
+	.guide_sec {padding:40px 20px;}
+	.guide_sec .tit {font-size:20px;}
+	.guide_sec .emp_msg {font-size:12px; margin-top:12px;}
+	.guide_wrap {flex-direction:column; width:200px; margin:32px auto 0;}
+	.guide_wrap .use_box ~ .use_box {margin:32px 0 0;}
+
+	/* ============================== [ 서비스안내 ] ========================================================================================== */
+	/* 서비스안내 배너 영역 */
+	.svc_bnr {padding:40px 20px;}
+	.svc_bnr p {font-size:18px; line-height:1.278em;}
+
+	/* 서비스 목록 */
+	.svc_li {padding:24px 20px;}
+	.svc_li .cotn {flex-direction:column; width:100%;}
+	.svc_li:nth-child(2n) .cotn {flex-direction:column;}
+	.svc_li .cotn .txt_area {width:100%; text-align:center;}
+	.svc_li .cotn .txt_area .num {font-size:16px; line-height:1.188em; margin-top:8px;}
+	.svc_li .cotn .txt_area .svc_tit {font-size:18px; line-height:1.278em; margin:8px auto 20px; width:200px;}
+	.svc_li .cotn .txt_area .sub_txt {font-size:14px;}
+	.svc_li .cotn .img_wrap {margin-top:12px; width:100%;}
+}

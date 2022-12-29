@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+/* ************************************************************************************************************************************************************
+						《 팝업 공통스타일 》
+************************************************************************************************************************************************************ */
+
+/*
+	[z-index 위계]
+	#딤드:class="dim"					9990
+	#알럿								9999
+*/
+
+/* ============================== [ 팝업딤드 ] ========================================================================================== */
+body.dim {overflow:hidden;}
+body.dim:before {background-color:rgba(0, 0, 0, 0.7); content:""; position:fixed; left:0; top:0; height:100vh; width:100%; z-index:9990;}
+
+
+/* ============================== [ 알럿팝업 ] ========================================================================================== */
+.alert_pop {display:none; background-color:#fff; border-radius:16px; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25); box-sizing:border-box; position:fixed; left:50%; top:50%; max-height:75vh; width:500px; transform:translate(-50%, -50%); z-index:9999;}
+.alert_pop .head {padding:32px 20px;}
+.alert_pop .head .tit {font-size:28px; font-weight:700; line-height:1.214em; text-align:center;}
+.alert_pop .cotn {padding:0 20px; overflow-x:hidden; overflow-y:auto; box-sizing:border-box; height:100%; max-height:calc(75vh - 207px);}
+.alert_pop .cotn .txt {line-height:1.5em; text-align:center; word-break:keep-all;}
+.alert_pop .btn_wrap.btn_pop {padding:20px 20px 32px; margin-top:0;}
+.alert_pop .closed {display:block; position:absolute; right:0; top:-36px; height:24px; width:24px; background:url(../images/common/icon_close_wh.svg) no-repeat 0 0; background-size:100%;}
+
+/* 알럿팝업:Big */
+.alert_pop.alert_big_pop .head {padding:32px 32px 20px;}
+.alert_pop.alert_big_pop .head .tit {text-align:left;}
+.alert_pop.alert_big_pop .cotn {padding:0 32px;}
+.alert_pop.alert_big_pop .btn_wrap.btn_pop {padding:20px 32px 32px;}
+
+/* -------------------- APP 다운로드 팝업 ---------------------------------------- */
+.alert_pop.app_dl_pop .cotn {padding-bottom:32px;}
+
+/* 회원가입혜택 */
+.benefit_wrap {}
+.benefit_wrap ul li {padding-left:26px; position:relative;}
+.benefit_wrap ul li::before {display:block; content:''; height:18px; width:18px; position:absolute; left:0; top:0; background:url(../images/common/icon_chk_list.svg) no-repeat 0 0; background-size:18px;}
+.benefit_wrap ul li p {font-weight:500; line-height:1.188em; word-break:keep-all;}
+.benefit_wrap ul li ~ li {margin-top:12px;}
+
+/* QR코드 */
+.qr_area {margin-top:24px; overflow:hidden;}
+.qr_area .qr_box {float:left; width:calc(50% - 12px); border-radius:12px; box-sizing:border-box; padding:12px 12px 20px;}
+.qr_area .qr_box ~ .qr_box {margin-left:24px;}
+.qr_area .qr_box.aos {background-color:#f1ecde;}
+.qr_area .qr_box.ios {background-color:#D4E5F8;}
+.qr_area .qr_box .qr_code {height:182px; width:182px; border-radius:8px; overflow:hidden;}
+.qr_area .qr_box .qr_code img {display:block; height:100%; width:100%; object-fit:contain;}
+.qr_area .qr_box .os {font-weight:700; line-height:1.188em; margin-top:20px; text-align:center; padding-top:44px; background-repeat:no-repeat; background-position:top center;}
+.qr_area .qr_box.aos .os {background-image:url(../images/common/icon_aos.svg); background-size:32px 36px; padding-top:44px;}
+.qr_area .qr_box.ios .os {background-image:url(../images/common/icon_ios.svg); background-size:32px 35px; padding-top:45px;}
+
+/* 버튼 */
+.app_dl_pop .btn_pop {display:none;}
+.app_dl_pop .btn_pop .icon_down {display:inline-block; vertical-align:middle; margin-right:4px; height:16px; width:16px; background:url(../images/common/icon_down_wh.svg) no-repeat 0 0; background-size:100%; margin:0 auto;}
+
+/**************************************************************************************************************************************************************************************************
+*************************************************** 《《《 MOBILE Layout 》》》 ***************************************************************************************************************
+***************************************************************************************************************************************************************************************************/
+
+
+@media only screen and (max-width:767px) {
+	/* ============================== [ 알럿팝업 ] ========================================================================================== */
+	.alert_pop {width:calc(100% - 40px);}
+	.alert_pop .head,
+	.alert_pop.alert_big_pop .head {padding:24px 16px 16px;}
+	.alert_pop .head .tit {font-size:20px; line-height:1.5em;}
+	.alert_pop.alert_big_pop .head .tit {text-align:center;}
+	.alert_pop .cotn,
+	.alert_pop.alert_big_pop .cotn {padding:0 16px;}
+	.alert_pop .cotn {max-height:calc(75vh - 156px);}
+	.alert_pop .btn_wrap.btn_pop,
+	.alert_pop.alert_big_pop .btn_wrap.btn_pop {padding:24px 16px 16px;}
+
+	/* 회원가입혜택 */
+	.benefit_wrap ul li p {font-size:14px; line-height:1.571em;}
+	.benefit_wrap ul li ~ li {margin-top:8px;}
+
+	/* QR코드 */
+	.qr_area {display:none;}
+
+	/* 버튼 */
+	.app_dl_pop .btn_pop {display:flex;}
+}

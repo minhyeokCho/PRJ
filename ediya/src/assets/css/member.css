@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+/* ************************************************************************************************************************************************************
+						《 회원/개인정보관리CSS 》
+************************************************************************************************************************************************************ */
+/* 회원/개인정보관리 공통 */
+.wd_mem {margin:0 auto; width:440px;}
+.member .sub_tit_area {margin-bottom:40px; padding-bottom:0; text-align:center;}
+
+/* ============================== [ 회원 ] ========================================================================================== */
+/* -------------------- 메인 ---------------------------------------- */
+.join_wrap .btn_wrap {margin-top:0;}
+.simple_wrap {display:flex; justify-content:center; margin-top:36px;}
+.simple_wrap .platform ~ .platform {margin-left:8px;}
+.simple_wrap .platform {position:relative; width:100px; height:82px; text-align:center;}
+.simple_wrap .platform .img_wrap {width:56px; height:56px; margin:0 auto;}
+.simple_wrap .platform .img_wrap img {display:block; width:100%;}
+.simple_wrap .platform .txt {font-size:14px; line-height:1.571em; margin-top:4px;}
+.simple_wrap .platform .go_join {display:block; width:100%; height:100%; position:absolute; top:0;left:0;}
+
+/* -------------------- 정보입력 ---------------------------------------- */
+.join_form_wrap .bg_box {background-color:#F8F8F8; border-radius:8px; box-sizing:border-box; display:flex; align-items:center; justify-content:center; width:100%; height:52px; text-align:center; margin-bottom:32px;}
+.join_form_wrap .bg_box .icon_chk {background:url(../images/common/icon_chk_bk.svg)0 0 no-repeat; display:inline-block; width:24px; height:24px;}
+.join_form_wrap .bg_box .txt {font-size:14px;}
+
+/* -------------------- 약관동의 ---------------------------------------- */
+.terms_chk_wrap .chk_all {border-bottom:1px solid #EEEEEE; margin-bottom:20px; padding-bottom:20px;}
+.poli_li_wrap .poli_wrap ~ .poli_wrap {margin-top:20px;}
+.poli_wrap.poli_mktg .chk_set {display:flex; flex-wrap:wrap; margin-top:20px; padding-left:32px; width:234px;}
+.poli_wrap.poli_mktg .chk_set .form_chk {margin:0 20px 0 0;}
+.poli_wrap.poli_mktg .chk_set .form_chk:nth-child(4) {margin-top:22px;}
+.poli_wrap.poli_mktg .chk_set .form_chk span {font-size:12px;}
+
+/* -------------------- 가입완료 ---------------------------------------- */
+.member .mem_cmplt {background:url(../images/common/icon_mem_cmplt.svg)0 0 no-repeat; display:inline-block; width:88px; height:88px; margin-bottom:12px;}
+.member .sub_tit_area .title {word-break:keep-all;}
+.member .wd_mem .benefit_wrap {display:block; background-color:#F8F8F8; height:144px;}
+
+/* -------------------- 로그인 ---------------------------------------- */
+.login_wrap .chk_set {margin-top:24px;}
+.login_wrap .login_search {margin-top:20px; text-align:center;}
+.login_wrap .login_search a {font-size:14px; color:#666666; line-height:1.214em; position:relative;}
+.login_wrap .login_search a ~ a {margin-left:12px; padding-left:12px;}
+.login_wrap .login_search a ~ a:before {content:''; background-color:#CCCCCC; width:1px; height:10px; position:absolute; top:3px; left:0;}
+
+/* -------------------- 로그인:아이디찾기완료 ---------------------------------------- */
+.find_box {background-color:#F8F8F8; border-radius:10px; padding:20px; text-align:center;}
+.find_box .info .id {font-weight:700; line-height:1.5em; margin-bottom:8px;}
+.find_box .info .join {font-size:14px; color:#666666; line-height:1.571em;}
+
+/* -------------------- 로그인:비밀번호재설정 ---------------------------------------- */
+.reset_wrap .find_box {margin-bottom:32px;}
+
+/* ============================== [ 팝업 ] ========================================================================================== */
+/* -------------------- 회원가입:약관상세보기 ---------------------------------------- */
+.term_detail_pop .head {border-bottom:1px solid #EEEEEE; margin-bottom:20px;}
+.alert_pop.term_detail_pop .cotn {max-height: calc(75vh - 228px);}
+.term_detail_pop .cotn h1 {font-weight:700; margin:8px 0 18px;}
+.term_detail_pop .cotn p {font-size:14px; color:#666666; line-height:1.571em;}
+.term_detail_pop .cotn p ~ p {margin-top:8px;}
+
+/* -------------------- 휴면회원:전환안내 ---------------------------------------- */
+.alert_pop.rest_mem_pop .cotn .txt.bl {color:#2A47BF; font-weight:700; margin-top:20px;}
+
+/* ============================== [ 개인정보관리 ] ========================================================================================== */
+/* -------------------- 비밀번호입력 ---------------------------------------- */
+.my_info_wrap .noti_wrap {margin-top:24px;}
+
+/* -------------------- 정보수정 ---------------------------------------- */
+.bg_box {background-color:#F8F8F8; border-radius:10px; padding:20px 24px;}
+.bg_box strong {font-weight:700; display:block; text-align:center; margin-bottom:16px;}
+.bg_box .dl_layout .dl_div {display:flex; align-items:center; justify-content:space-between;}
+.bg_box .dl_layout .dl_div ~ .dl_div {margin-top:8px;}
+.bg_box .dl_layout .dl_div .tit {font-size:14px; color:#666666; line-height:1.571em;}
+.bg_box .dl_layout .dl_div .info_txt {font-size:14px; line-height:1.571em;}
+.my_info_wrap .info_sec {position:relative;}
+.my_info_wrap .info_sec ~ .info_sec {margin-top:32px; padding-top:40px;}
+.my_info_wrap .info_sec ~ .info_sec:before {content:''; background-color:#F8F8F8; display:block; width:100%; height:8px; position:absolute; top:0; left:0;}
+.my_info_wrap .bg_box {margin-bottom:40px;}
+.my_info_wrap .form_wrap .form_txt.btn_with .txt .in_form .btn {background-color:#2A47BF; border:none; color:#fff; font-weight:400; line-height:1.167em;}
+.my_info_wrap .pw_change {display:flex; justify-content:flex-end; padding-top:16px;}
+.my_info_wrap .pw_change .go_change {display:flex; align-items:center;}
+.my_info_wrap .pw_change .go_change .txt {font-weight:500; font-size:14px; color:#666666; line-height:1.214em; margin-right:4px;}
+.pw_change .go_change .arr_right_gray {background:url(../images/common/arr_right_12_gray.svg)no-repeat center; display:block; width:12px; height:12px;}
+.my_info_wrap .sns_wrap {margin-top:20px;}
+.my_info_wrap .sns_wrap .sns {border-bottom:1px solid #EEEEEE; display:flex; align-items:center; justify-content:space-between; padding:20px;}
+.my_info_wrap .sns_wrap .sns .sns_tit {font-weight:500;}
+.my_info_wrap .quit_mem {display:block; text-align:center; margin-top:24px;}
+.my_info_wrap .go_quit {display:inline-block; font-size:14px; color:#666666; line-height:1.214em; text-align:center;}
+.my_info_wrap .go_quit:after {content:''; display:block; border-bottom:1px solid #666666;}
+
+/* -------------------- 회원탈퇴:사유선택 ---------------------------------------- */
+.reason_wrap .tit {font-weight:500; line-height:1.188em; margin-bottom:8px;}
+.reason_wrap .form_text_area {margin-top:16px;}
+.quit_info_wrap .quit_chk {margin:24px 0;}
+.quit_info_wrap .noti_wrap .info_txt p:first-child {padding:0;}
+
+/**************************************************************************************************************************************************************************************************
+*************************************************** 《《《 MOBILE Layout 》》》 ***************************************************************************************************************
+***************************************************************************************************************************************************************************************************/
+@media only screen and (max-width:767px) {
+	/* 회원/개인정보관리 공통 */
+	.wd_mem {box-sizing:border-box; padding:0 20px; width:100%;}
+	.member .sub_tit_area {margin-bottom:32px;}
+	.member .wd_mem .benefit_wrap {height:430px;}
+	/* ============================== [ 팝업 ] ========================================================================================== */
+	/* -------------------- 회원가입:약관상세보기 ---------------------------------------- */
+	.alert_pop.term_detail_pop .cotn {max-height: calc(75vh - 178px);}
+}

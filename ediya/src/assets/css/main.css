@@ -1,0 +1,181 @@
+@charset "utf-8";
+
+/* ************************************************************************************************************************************************************
+						《 메인CSS 》
+************************************************************************************************************************************************************ */
+
+/* ============================== [ 공통 ] ========================================================================================== */
+
+/* 전체보기버튼 */
+.btn_all {width:110px; height:32px;}
+.btn_all .btn {display:block; border:1px solid #ccc; border-radius:4px; box-sizing:border-box; color:#666; font-size:12px; font-weight:500; text-align:center; padding:6px 0;}
+.btn_all .btn span {vertical-align:middle;}
+.btn_all .btn .i_arr {display:inline-block; vertical-align:middle; background:url(../images/common/arr_right_12_gray.svg) no-repeat 0 0; background-size:12px; height:12px; width:12px;}
+
+/* ============================== [ 메인베너 ] ========================================================================================== */
+.sec_bnr {background-color:#f8f8f8; padding-top:200px; margin-top:-124px; position:relative;}
+
+/* -------------------- 베너슬라이드 ---------------------------------------- */
+.main_bnr_wrap {position:relative;}
+.bnr_slide .bnr_group {position:relative;}
+.bnr_slide .bnr_group .go_view {width:1192px; left:50%; transform:translateX(-50%);}
+
+/* 텍스트영역 */
+.bnr_slide .txt_area {text-align:center;}
+.bnr_slide .txt_area .tit {font-size:50px; line-height:1.3em; text-align:center; word-break:keep-all;}
+.bnr_slide .txt_area .tit strong {font-weight:700;}
+.bnr_slide .txt_area .txt {margin-top:28px; font-weight:500; font-size:28px; line-height:1.286em; word-break:keep-all;}
+
+/* 이미지영역 */
+.bnr_slide .img_area {margin:86px auto 0; height:600px; max-width:1192px;}
+.bnr_slide .img_area .img {height:100%; width:100%;}
+.bnr_slide .img_area .img img {height:100%; width:100%; display:block; object-fit:cover;}
+
+/* 인디케이터 */
+.bnr_slide .indi_wrap {display:flex; align-items:center; position:absolute; left:50%; top:250px; transform:translateX(-50%); z-index:1;}
+.bnr_slide .prog_bar {position:relative; height:3px; width:215px; background-color:rgba(17, 17, 17, 0.1); margin-right:12px;}
+.bnr_slide .prog_bar span {background-color:#111;}
+.bnr_slide .slide_paging {font-size:14px; line-height:1.429em; color:rgba(17, 17, 17, 0.5); overflow:hidden; display:inline-block; margin-right:8px;}
+.bnr_slide .slide_paging span {float:left; width:16px; text-align:center;}
+.bnr_slide .slide_paging span.active {color:#111; font-weight:600;}
+.bnr_slide .btn_pause {display:block; height:16px; width:16px; background:url(../images/common/icon_pause.svg) no-repeat 0 0; background-size:16px;}
+.bnr_slide .btn_pause.on {background-image:url(../images/common/icon_play.svg);}
+
+/* -------------------- 스크롤 ---------------------------------------- */
+.scr {position:absolute; left:50%; bottom:40px; transform:translateX(-50%);}
+.scr span {font-weight:500; font-size:12px; line-height:1.167em;}
+.scr .i_scr {display:block; margin:2px auto 0; height:16px; width:16px; background:url(../images/common/icon_scr.svg) no-repeat 0 0; background-size:16px; z-index:1;}
+
+/* ============================== [ 서비스안내 ] ========================================================================================== */
+.sec_svc {padding:120px 0; width:100%; box-sizing:border-box; background-color:#fff;}
+.sec_svc .cotn {width:1192px; margin:0 auto;}
+.sec_svc .cotn .sec_tit {text-align:center;}
+.svc_area {margin-top:40px;}
+.svc_area .svc_wrap {width:988px; display:flex; align-items:center;}
+.svc_area .svc_wrap ~ .svc_wrap {margin-top:20px;}
+.svc_area .svc_wrap.cotn_r {flex-direction:row-reverse; margin-left:auto;}
+.svc_area .svc_wrap.cotn_r .txt_area {margin-right:32px;}
+.svc_area .svc_wrap.cotn_l .txt_area {margin-left:32px;}
+
+/* 이미지영역 */
+.svc_wrap .img_area {height:auto; width:580px;}
+.svc_wrap .img_area img {height:100%; width:100%;}
+
+/* 텍스트영역 */
+.svc_wrap .txt_area {flex:1;}
+.svc_wrap .txt_area .tit {font-weight:700; font-size:38px; line-height:1.289em; margin-top:4px; word-break:keep-all;}
+.svc_wrap .txt_area .tit strong {color:#2A47BF;}
+.svc_wrap .txt_area .txt {margin-top:24px; color:#666; font-size:18px; line-height:1.5em; word-break:keep-all;}
+.svc_wrap .txt_area .btn_txt {display:inline-block; margin-top:24px; font-weight:500; line-height:1.188em;}
+.svc_wrap .txt_area .btn_txt span {padding-right:14px; background:url(../images/common/arr_right_16.svg) no-repeat right center; background-size:12px;}
+
+/* ============================== [ 이벤트 ] ========================================================================================== */
+.sec_evt {padding:120px 0; width:100%; box-sizing:border-box; background-color:#FAF7F4;}
+.sec_evt .cotn .sec_tit {width:1192px; margin:0 auto;}
+.sec_evt .cotn .sec_tit .noti_txt {margin-top:16px; font-size:20px; line-height:1.4em; color:#666; word-break:keep-all;}
+
+/* 이벤트슬라이드 */
+.evt_slide_wrap {margin-top:70px;}
+.evt_slide_wrap .evt_slide {padding-left:350px;}
+.evt_slide .evt_wrap {width:580px; user-select:none;}
+.evt_slide .evt_wrap .img_area {border-radius:0;}
+
+/* 슬라이드버튼 */
+.sw_btn_wrap {position:absolute; right:0; bottom:0;}
+.sw_btn_wrap .btn_slide {display:inline-block; vertical-align:middle; height:32px; width:32px; border:1px solid #ccc; box-sizing:border-box; border-radius:4px; cursor:pointer; background-repeat:no-repeat; background-position:center; background-size:16px;}
+.sw_btn_wrap .btn_slide ~ .btn_slide {margin-left:2px;}
+.sw_btn_wrap .btn_slide.pause {background-image:url(../images/common/icon_pause.svg);}
+.sw_btn_wrap .btn_slide.pause.on {background-image:url(../images/common/icon_play.svg);}
+.sw_btn_wrap .btn_slide.prev {background-image:url(../images/common/arr_left_16.svg);}
+.sw_btn_wrap .btn_slide.next {background-image:url(../images/common/arr_right_16.svg);}
+.sw_btn_wrap .btn_all {margin-left:10px; display:inline-block;}
+
+/* ============================== [ 공지사항 ] ========================================================================================== */
+.sec_noti {padding:120px 0; width:100%; box-sizing:border-box; background-color:#fff;}
+.sec_noti .cotn {width:1192px; margin:0 auto; display:flex; align-items:center;}
+.sec_noti .cotn .btn_all {margin-top:24px;}
+
+/* 공지사항목록 */
+.noti_list {width:682px; margin-left:auto;}
+.noti_list .list {position:relative; background-color:#f8f8f8; padding:26px 24px; box-sizing:border-box; border-radius:12px; overflow:hidden;}
+.noti_list .list ~ .list {margin-top:12px;}
+.noti_list .list p {display:inline-block; vertical-align:middle;}
+.noti_list .list .tit {font-weight:500; line-height:1.188em; width:calc(100% - 76px); text-overflow:ellipsis; white-space:nowrap; word-wrap:normal; overflow:hidden;}
+.noti_list .list .date {color:#999; font-size:12px; line-height:1.667em;}
+.noti_list .list.fix {padding-left:76px; background-image:url(../images/common/icon_fix.svg); background-repeat:no-repeat; background-size:40px; background-position:left 24px center;}
+
+/**************************************************************************************************************************************************************************************************
+*************************************************** 《《《 MOBILE Layout 》》》 ***************************************************************************************************************
+***************************************************************************************************************************************************************************************************/
+
+
+@media only screen and (max-width:767px) {
+	/* ============================== [ 메인베너 ] ========================================================================================== */
+	.sec_bnr {padding:120px 0 20px; margin-top:-44px;}
+	.scr {display:none;}
+
+	/* -------------------- 베너슬라이드 ---------------------------------------- */
+	.bnr_slide .bnr_group .go_view {width:100%;}
+
+	/* 텍스트영역 */
+	.bnr_slide .txt_area {padding:0 30px;}
+	.bnr_slide .txt_area .tit {font-size:30px; line-height:1.367em;}
+	.bnr_slide .txt_area .txt {margin-top:20px; font-size:18px; line-height:1.278em;}
+
+	/* 이미지영역 */
+	.bnr_slide .img_area {height:auto; width:100%; margin-top:34px;}
+
+	/* 인디케이터 */
+	.bnr_slide .indi_wrap {top:inherit; left:inherit; transform:none; position:relative; width:calc(100% - 40px); padding:0 20px;}
+	.bnr_slide .prog_bar {width:calc(100% - 80px);}
+	.bnr_slide .slide_paging {margin-right:4px;}
+
+	/* ============================== [ 공통 ] ========================================================================================== */
+	.btn_all {margin:0 auto;}
+
+	/* ============================== [ 서비스안내 ] ========================================================================================== */
+	.sec_svc {padding:80px 20px;}
+	.sec_svc .cotn {width:100%;}
+	.svc_area {margin-top:36px;}
+	.svc_area .svc_wrap {width:100%; display:block;}
+	.svc_area .svc_wrap ~ .svc_wrap {margin-top:60px;}
+	.svc_area .svc_wrap.cotn_r {margin-left:0;}
+	.svc_area .svc_wrap.cotn_r .txt_area {margin-right:0;}
+	.svc_area .svc_wrap.cotn_l .txt_area {margin-left:0;}
+
+	/* 이미지영역 */
+	.svc_wrap .img_area {width:100%;}
+
+	/* 텍스트영역 */
+	.svc_wrap .txt_area {text-align:center;}
+	.svc_wrap .txt_area .tit {font-weight:700; font-size:18px; line-height:1.278em;}
+	.svc_wrap .txt_area .txt {margin-top:12px; font-size:14px;}
+	.svc_wrap .txt_area .btn_txt {margin-top:12px; font-size:14px; line-height:1.214em;}
+
+
+	/* ============================== [ 공지사항 ] ========================================================================================== */
+	.sec_noti {padding:80px 20px;}
+	.sec_noti .cotn {width:100%; display:block;}
+	.sec_noti .cotn .btn_all {margin-top:8px;}
+
+	/* 공지사항목록 */
+	.noti_list {width:100%; margin:24px 0 0 0;}
+	.noti_list .list {padding:16px; border-radius:8px;}
+	.noti_list .list .tit {font-size:14px; line-height:1.286em; width:100%;}
+	.noti_list .list .date {display:none;}
+	.noti_list .list.fix {padding-left:52px; background-size:30px; background-position:left 12px center;}
+
+	/* ============================== [ 이벤트 ] ========================================================================================== */
+	.sec_evt {padding:80px 0;}
+	.sec_evt .cotn .sec_tit {width:100%; padding:0 20px;}
+	.sec_evt .cotn .sec_tit .noti_txt {margin-top:8px; font-size:14px; line-height:1.214em;}
+
+	/* 이벤트슬라이드 */
+	.evt_slide_wrap {margin-top:24px;}
+	.evt_slide_wrap .evt_slide {padding-left:0;}
+	.evt_slide .evt_wrap {max-width:320px; width:100%;}
+	.evt_slide .evt_wrap .img_area {height:165px;}
+
+	/* 슬라이드버튼 */
+	.sw_btn_wrap {position:relative; margin-top:24px;}
+}

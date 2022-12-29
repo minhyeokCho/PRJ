@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+/* ************************************************************************************************************************************************************
+						《 이벤트CSS 》
+************************************************************************************************************************************************************ */
+.event_list {margin-top:40px;}
+.event_list .div_gap {display:none;}
+
+/* ============================== [ 이벤트슬라이드 ] ========================================================================================== */
+.evt_slide_wrap {display:flex; align-items:center; margin-bottom:40px;}
+.evt_slide_wrap .noti_txt {color:#666; font-size:12px; line-height:1.667em; margin-top:20px;}
+.evt_slide_wrap .btn_arrow {display:inline-block; margin-top:32px; height:48px; width:48px; border-radius:50%; border:1px solid #CCCCCC; background-color:#fff; background-repeat:no-repeat; background-size:18px; background-position:center; cursor:pointer;}
+.evt_slide_wrap .btn_arrow.next {background-image:url(../images/common/arr_right_18.svg);}
+.evt_slide_wrap .btn_arrow.prev {margin-right:16px; background-image:url(../images/common/arr_left_18.svg);}
+
+/* 텍스트슬라이드 */
+.evt_txt_slide {width:31%; margin-right:32px;}
+.evt_txt_slide .txt_slide .txt_group {position:relative;}
+.evt_txt_slide .txt_slide .txt_group p {transform:translateX(10px); opacity:0;}
+.evt_txt_slide .txt_slide .swiper-slide-active p {opacity:1; transform:none;}
+.evt_txt_slide .txt_slide .tit {font-weight:600; font-size:34px; line-height:1.294em; word-break:keep-all;}
+.evt_txt_slide .txt_slide .tit {transition: transform .35s .3s ease-in-out, opacity .35s .3s ease-in-out;}
+.evt_txt_slide .txt_slide .date {margin-top:8px; font-size:18px; line-height:1.222em;}
+.evt_txt_slide .txt_slide .date {transition: transform .35s .4s ease-in-out, opacity .35s .4s ease-in-out;}
+
+
+/* 이미지슬라이드 */
+.evt_img_slide {width:calc(69% - 32px); position:relative;}
+.evt_img_slide::after {display:block; content:''; height:100%; width:32px; position:absolute; right:0; top:0; background:linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%); z-index:1;}
+.evt_img_slide .img_slide .img_group {width:39.24%; position:relative; border-radius:16px; overflow:hidden; user-select:none;}
+.evt_img_slide .img_slide .img_area {position:relative; height:420px; width:310px;}
+.evt_img_slide .img_slide .img_area .img {height:100%; width:100%;}
+.evt_img_slide .img_slide .img_area .img img {height:100%; width:100%; display:block; object-fit:cover;}
+.evt_img_slide .img_slide .img_area .flag_wrap {position:absolute; left:24px; top:24px;}
+.evt_img_slide .img_slide .txt_area {display:none; position:absolute; left:0; bottom:0; width:100%; padding:50px 24px 16px; box-sizing:border-box; background:linear-gradient(180deg, rgba(0, 0, 0, 0) 10.47%, rgba(0, 0, 0, 0.5) 100%);}
+.evt_img_slide .img_slide .txt_area .tit {color:#fff; font-weight:700; font-size:24px; line-height:1.333em; word-break:keep-all;}
+.evt_img_slide .img_slide .txt_area .date {color:#fff; margin-top:8px; font-size:14px; line-height:1.571em; word-break:keep-all;}
+.evt_img_slide .img_paging {margin-top:18px; text-align:center; display:none;}
+.evt_img_slide .img_paging .swiper-pagination-bullet {background-color:#ccc; height:6px; width:6px; opacity:1; margin:0 2px;}
+.evt_img_slide .img_paging .swiper-pagination-bullet-active {background-color:#111;}
+
+/* ============================== [ 이벤트목록 ] ========================================================================================== */
+.evt_list {display:flex; flex-wrap:wrap; margin:-56px 0 0 -32px;}
+.evt_list .evt_wrap {margin:56px 0 0 32px; width:calc(50% - 32px);}
+
+/* 더보기버튼 */
+.btn_wrap.btn_more {display:none; padding:0 20px;}
+
+/* 데이터없음 */
+.event .data_none {margin-top:120px;}
+.event .data_none .cotn {padding-top:100px; background:url(../images/common/icon_none_evnt.svg) no-repeat top center; background-size:100px 100px;}
+.event .data_none .cotn p {line-height:1.5em; text-align:center; margin-top:4px;}
+
+/**************************************************************************************************************************************************************************************************
+*************************************************** 《《《 MOBILE Layout 》》》 ***************************************************************************************************************
+***************************************************************************************************************************************************************************************************/
+
+
+@media only screen and (max-width:767px) {
+	/* ============================== [ 이벤트슬라이드 ] ========================================================================================== */
+	.event_list {margin-top:24px;}
+	.event_list .div_gap {display:block; margin-bottom:32px;}
+	.evt_slide_wrap {margin-bottom:0;}
+
+	/* 텍스트슬라이드 */
+	.evt_txt_slide {display:none;}
+
+	/* 이미지슬라이드 */
+	.evt_img_slide {width:100%; margin-bottom:30px;}
+	.evt_img_slide::after {display:none;}
+	.evt_img_slide .img_slide {padding-left:20px;}
+	.evt_img_slide .img_slide .img_group {width:82%; border-radius:8px;}
+	.evt_img_slide .img_slide .img_area {height:auto; width:100%;}
+	.evt_img_slide .img_slide .img_area .flag_wrap {left:12px; top:12px;}
+	.evt_img_slide .img_slide .txt_area {display:block;}
+	.evt_img_slide .img_slide .img_paging {display:block;}
+
+	/* ============================== [ 이벤트목록 ] ========================================================================================== */
+	.evt_list {margin:24px 0 0 0; padding:0 20px;}
+	.evt_list .evt_wrap {margin:0; width:100%;}
+	.evt_list .evt_wrap ~ .evt_wrap {margin-top:16px;}
+
+	/* 더보기버튼 */
+	.btn_wrap.btn_more {display:flex;}
+
+	/* 데이터없음 */
+	.event .data_none {padding-bottom:80px;}
+}
