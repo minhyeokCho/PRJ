@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<link rel="stylesheet" href="../assets/css/lib/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/lib/swiper-bundle.min.css">
+	<link rel="stylesheet" href="../assets/css/setting.css">
+	<link rel="stylesheet" href="../assets/css/common.css">
+	<script type="text/javascript" src="../assets/js/lib/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../assets/js/lib/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../assets/js/lib/swiper-bundle.min.js"></script>
+	<script type="text/javascript" src="../assets/js/common.js"></script>
+	<title>프로필메인</title>
+</head>
+
+<body>
+<!-- #WRAP -->
+<div id="wrap" current_page="profile">
+	<!-- #CONTENTS -->
+	<div id="contents" class="cotn_tab_bar">
+		<!-- 프로필정보 -->
+		<div class="profile_info">
+			<div class="cotn">
+				<figure class="img profile_img">
+					<img src="../assets/images/temp/profile.png" alt="프로필사진">
+				</figure>
+				<p class="name">Alexander Joy</p>
+			</div>
+		</div>
+		<!--// 프로필정보 -->
+
+		<!-- 프로필메뉴 -->
+		<div class="menu_list">
+			<ul>
+				<li class="nickname">
+					<p class="menu_tit">닉네임 변경하기</p>
+					<a href="#none" class="go_view">
+						<span class="blind">상세페이지이동</span>
+					</a>
+				</li>
+				<li class="post">
+					<p class="menu_tit">좋아요 누른 포스트</p>
+					<a href="#none" class="go_view">
+						<span class="blind">상세페이지이동</span>
+					</a>
+				</li>
+				<li class="my_comment">
+					<p class="menu_tit">내가 쓴 댓글</p>
+					<a href="#none" class="go_view">
+						<span class="blind">상세페이지이동</span>
+					</a>
+				</li>
+				<li class="cs">
+					<p class="menu_tit">고객 센터</p>
+					<a href="#none" class="go_view">
+						<span class="blind">상세페이지이동</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--// 프로필메뉴 -->
+	</div>
+	<!--// #CONTENTS -->
+
+	<!-- 검색팝업 -->
+	<section class="popup">
+		<div class="cotn">
+			<form>
+				<div class="srch_wrap">
+					<input type="text" placeholder="키워드를 검색해보세요.">
+					<button type="submit" class="btn_srch">
+						<span class="blind">검색</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</section>
+	<!--// 검색팝업 -->
+
+	<!-- 탭바 -->
+	<aside class="tap_bar">
+		<div class="cotn">
+			<a href="#none" class="btn home "><!-- 활성화 class="on"추가 -->
+				<i class="icon_tap"></i>
+				<span>홈</span>
+			</a>
+			<a href="#none" class="btn post">
+				<i class="icon_tap"></i>
+				<span>모든 포스트</span>
+			</a>
+			<a href="#none" class="btn search">
+				<i class="icon_tap"></i>
+				<span>검색</span>
+			</a>
+			<a href="#none" class="btn profile on">
+				<i class="icon_tap"></i>
+				<span>프로필</span>
+			</a>
+		</div>
+	</aside>
+	<!--// 탭바 -->
+</div>
+<!--// #WRAP -->
+</body>
+</html>

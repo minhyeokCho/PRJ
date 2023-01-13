@@ -265,6 +265,8 @@ function bnrMainSlide(){ //메인:베너슬라이드
 		slidesPerView:1,
 		loop: true,
 		speed : 500,
+		observer: true,
+		observeParents: true,
 		autoplay: {
 			delay: 4000,
 			disableOnInteraction: false,

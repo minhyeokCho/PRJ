@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+	<link rel="stylesheet" type="text/css" href="./status.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+	<title>HTML LIST</title>
+</head>
+
+<body>
+<h1>HTML LIST</h1>
+
+<div class="menu_wrap all">
+	<!-- list 템플릿 -->
+	<section class="menu_list">
+		<table>
+			<colgroup>
+				<col width="20%">
+				<col width="20%">
+				<col width="20%">
+				<col width="40%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">1DEPTH</th>
+					<th scope="col">2DEPTH</th>
+					<th scope="col">LINK</th>
+					<th scope="col">COMMENT</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="menu_section_02 ignore">
+					<td colspan="4">회원가입</td>
+				</tr>
+				<tr class="menu01">
+					<td class="depth01">약관동의</td>
+					<td></td>
+					<td><a href="./app/html/policy.html" target="_blank">policy</a></td>
+					<td class="comment"></td>
+				</tr>
+				<tr class="menu01">
+					<td class="depth01">닉네임입력</td>
+					<td></td>
+					<td><a href="./app/html/nickname.html" target="_blank">nickname</a></td>
+					<td class="comment"></td>
+				</tr>
+				<tr class="menu_section_02 ignore">
+					<td colspan="4">HOME</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01">홈</td>
+					<td></td>
+					<td><a href="./app/html/main.html" target="_blank">main</a></td>
+					<td class="comment"></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01">모든포스트</td>
+					<td></td>
+					<td><a href="./app/html/post.html" target="_blank">post</a></td>
+					<td class="comment"></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01">검색팝업</td>
+					<td></td>
+					<td><a href="./app/html/search_pop.html" target="_blank">search_pop</a></td>
+					<td class="comment"></td>
+				</tr>
+				<tr class="menu_section_02 ignore">
+					<td colspan="4">2depth</td>
+				</tr>
+				<tr class="menu03">
+					<td class="depth01">2depth_홈</td>
+					<td></td>
+					<td><a href="./app/html/detail.html" target="_blank">detail</a></td>
+					<td class="comment"></td>
+				</tr>
+				<tr class="menu03">
+					<td class="depth01">댓글</td>
+					<td></td>
+					<td><a href="./app/html/comment.html" target="_blank">comment</a></td>
+					<td class="comment"></td>
+				</tr>
+				<tr class="menu_section_02 ignore">
+					<td colspan="4">프로필</td>
+				</tr>
+				<tr class="menu04">
+					<td class="depth01">프로필_홈</td>
+					<td></td>
+					<td><a href="./app/html/profile.html" target="_blank">profile</a></td>
+					<td class="comment"></td>
+				</tr>
+				<tr class="menu04">
+					<td class="depth01">고객센터</td>
+					<td></td>
+					<td><a href="./app/html/customer.html" target="_blank">customer</a></td>
+					<td class="comment"></td>
+				</tr>
+				<tr class="menu04">
+					<td class="depth01">내가쓴댓글</td>
+					<td></td>
+					<td><a href="./app/html/comment_list.html" target="_blank">comment_list</a></td>
+					<td class="comment"></td>
+				</tr>
+				<tr class="menu04">
+					<td class="depth01">좋아요누른포스트</td>
+					<td></td>
+					<td><a href="./app/html/like_post.html" target="_blank">like_post</a></td>
+					<td class="comment"></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<!--// list 템플릿 -->
+</div>
+
+<!-- list 템플릿 -->
+<section class="menu_list" style="display:none;">
+	<table>
+		<thead>
+			<tr class="menu_section">
+				<th colspan="9">
+					<h1>list 템플릿</h1>
+				</th>
+			</tr>
+			<tr>
+				<th scope="col">1DEPTH</th>
+				<th scope="col">2DEPTH</th>
+				<th scope="col">3DEPTH</th>
+				<th scope="col">4DEPTH or TAB</th>
+				<th scope="col">TYPE</th>
+				<th scope="col">LINK</th>
+				<th scope="col">NAME</th>
+				<th scope="col">COMPLETE</th>
+				<th scope="col">COMMENT</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="menu01 ignore">
+				<td class="depth01">메인</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="center"></td>
+				<td><p class="link">/customer/main</p></td>
+				<td class="center name"></td>
+				<td class="center end"></td>
+				<td class="comment"></td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+<!--// list 템플릿 -->
+</body>
+</html>
