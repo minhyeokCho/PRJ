@@ -109,9 +109,9 @@ strong {font-weight:700;}
 
 /* 서브 슬라이드 */
 .sub_slide {margin-top:60px;}
-.sub_slide .slide_tit_area .title {font-size:18px; line-height:1.222em; font-weight:700; padding-left:28px; background-position:left top; background-repeat:no-repeat; background-size:20px;}
-.sub_slide .slide_tit_area .title.music {background-image:url(../images/common/music.svg);}
-.sub_slide .slide_tit_area .title.comic {background-image:url(../images/common/comic.svg);}
+.sub_slide .slide_tit_area .title {font-size:18px; line-height:1.222em; font-weight:700; padding-left:28px; background-position:left top; background-repeat:no-repeat; background-size:20px 20px;}
+.sub_slide .slide_tit_area .title.music {background-image:url(../images/common/music.png);}
+.sub_slide .slide_tit_area .title.comic {background-image:url(../images/common/comic.png);}
 .sub_slide .slide_tit_area .title span {display:block; margin-top:4px; font-size:13px; line-height:1.231em; color:#888; font-weight:400;}
 .sub_slide .item {width:34.375%;}
 .sub_slide .img {border:1px solid #e7e7e7; border-radius:10px; overflow:hidden;}
