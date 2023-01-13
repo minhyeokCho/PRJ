@@ -9,9 +9,9 @@
 #header {margin:0 auto; max-width:768px; width:100%; background-color:#fff;}
 #wrap {min-height:100vh;}
 #contents {padding-top:52px;}
-#contents.cotn_btm {padding-bottom:90px;}
-#contents.cotn_btm_block {padding-bottom:90px;}
-#contents.cotn_tab_bar {padding:0 0 107px;}
+#contents.cotn_btm {padding-bottom:calc(90px + env(safe-area-inset-bottom));}
+#contents.cotn_btm_block {padding-bottom:calc(90px + env(safe-area-inset-bottom));}
+#contents.cotn_tab_bar {padding-top:0; padding-bottom: calc(107px + env(safe-area-inset-bottom));}
 
 
 /* ============================== [ Header ] ========================================================================================== */
@@ -47,10 +47,10 @@ strong {font-weight:700;}
 
 /* 버튼 */
 .btn_fixed {position:fixed; left:0; bottom:0; right:0; z-index:10; width:100%; max-width:768px; padding:20px; padding-bottom:calc(20px + env(safe-area-inset-bottom)); margin:0 auto; box-sizing:border-box; background-color:transparent;}
-.btn_fixed.bk {padding:0;}
+.btn_fixed.bk {padding:0; padding-bottom:calc(0 + env(safe-area-inset-bottom)); }
 .btn_wrap .btn {display:flex; justify-content:center; color:#fff; background-color:#bfbfbf; border-radius:30px; font-weight:700; height:50px; box-sizing:border-box; width:100%; line-height:3.4em; overflow:hidden;}
 .btn_wrap.on .btn {background-color:#ff7223;}
-.btn_wrap .btn_bk {display:flex; align-items:center; justify-content:center; color:#fff; background-color:#222; height:59px; font-weight:700; height:59px; width:100%;}
+.btn_wrap .btn_bk {display:flex; align-items:center; justify-content:center; color:#fff; background-color:#222; font-weight:700; width:100%; padding-top:21px; padding-bottom:calc(21px + env(safe-area-inset-bottom));}
 
 /* input */
 .txt .input_area {display:block; box-sizing:border-box; border:2px solid #dcdcdc; background-color:#fff; border-radius:8px; padding:0 16px; height:48px; width:100%; font-size:14px; transition:border .3s;}
@@ -80,7 +80,7 @@ strong {font-weight:700;}
 .join_wrap .poli_area {margin-top:18px;}
 .join_wrap .poli_wrap {padding:20px; box-sizing:border-box; position:relative; border-bottom:1px solid #ececec;}
 .join_wrap .poli_wrap .form_chk {height:20px; width:calc(100% - 24px); box-sizing:border-box;}
-.join_wrap .txt {margin-top:40px; padding:0 20px;}
+.join_wrap .txt {margin-top:40px; padding:0 20px; user-select:none;}
 
 
 /* ============================== [ 메인 ] ========================================================================================== */
