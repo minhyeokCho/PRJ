@@ -168,7 +168,7 @@ strong {font-weight:700;}
 .menu_list li.cs .menu_tit {background-image:url(../images/common/pro_cs.svg);}
 
 /* 고객센터 */
-.cs_form .btn_wrap {margin-top:30px;}
+.profile_inner .btn_wrap {margin-top:30px;}
 
 /* 내가쓴댓글 */
 .comt_my_wrap ~ .comt_my_wrap {margin-top:60px;}
