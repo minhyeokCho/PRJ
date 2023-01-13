@@ -120,7 +120,7 @@ strong {font-weight:700;}
 
 
 /* ============================== [ post ] ========================================================================================== */
-.sub_slide.post_slide .img {border:none;}
+.sub_slide.post_slide .img {border:none; border-radius:0;}
 .sub_slide.post_slide .slide_tit_area .title {padding-left:0;}
 /* ============================== [ 상세 ] ========================================================================================== */
 .detail_wrap {padding:12px 20px 0; box-sizing:border-box;}
